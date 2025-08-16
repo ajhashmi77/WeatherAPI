@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY}  # From .env
+    depends_on:
+      - redis
+    volumes:
+      - .:/app  # For development (hot-reload)
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:  # Persist Redis data
