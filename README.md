@@ -14,8 +14,12 @@ A lightweight weather data API with caching, built with FastAPI. Fetches real-ti
 - Redis (caching)
 - OpenWeatherMap API
 
-## Setup
+## 🚀 Quick Start
 ```bash
+# Install dependencies
 git clone https://github.com/yourusername/weather-api.git
 cd weather-api
 pip install -r requirements.txt
+
+# Run locally
+uvicorn app.main:app --reload
